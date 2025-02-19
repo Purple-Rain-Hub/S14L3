@@ -1,0 +1,41 @@
+﻿@model SaleViewModel;
+@{
+	ViewData["Title"] = "Cinema";
+}
+
+<h1>Cinepolis Los Santos</h1>
+
+<div>
+    <form method="post" asp-controller="Cinema" asp-action="Add">
+        <div>
+            <label for="sala" asp-for="SalaSelezionata" class="form-label"></label>
+            <select id="sala" asp-for="SalaSelezionata" asp-items="Model.Sale"></select>
+        </div>
+        <div>
+            <label for="nome" asp-for="Nome" class="form-label"></label>
+            <input id="nome" asp-for="Nome" class="form-control" />
+            <span class="text-danger" asp-validation-for="Nome"></span>
+        </div>
+
+        <div>
+            <label for="cognome" asp-for="Cognome" class="form-label"></label>
+            <input id="cognome" asp-for="Cognome" class="form-control" />
+            <span class="text-danger" asp-validation-for="Cognome"></span>
+        </div>
+
+        <div>
+            <label for="tipo" asp-for="Tipo" class="form-label"></label>
+            <input type="checkbox" id="tipo" asp-for="Tipo" class="form-check-input" />
+        </div>
+
+        @if (Model.Error)
+        {
+            <span class="text-danger" >Sala Piena! Selezionare un'altra sala</span>
+        }
+
+        <div>
+            <button class="btn btn-success" type="submit">Save</button>
+            <button class="btn btn-warning" type="reset">Reset</button>
+        </div>
+    </form>
+</div>
