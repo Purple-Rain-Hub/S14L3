@@ -23,8 +23,6 @@ namespace S14L3.Models
         [Display(Name = "Biglietto Ridotto (bambini fino a 10 anni)")]
         public bool Tipo { get; set; }
 
-        public bool Error {  get; set; }
-
         public List<Utente>? SalaSud { get; set; }
         public List<Utente>? SalaEst { get; set; }
         public List<Utente>? SalaNord { get; set; }

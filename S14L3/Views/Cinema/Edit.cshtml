@@ -1,0 +1,31 @@
+﻿@model Utente
+@{
+	ViewData["Title"] = "Cinema";
+}
+
+<div>
+	<form method="post" asp-controller="Cinema" asp-action="SaveEdit" asp-route-id="@Model.Id">
+		<div>
+			<label for="nome" asp-for="Nome" class="form-label"></label>
+			<input id="nome" asp-for="Nome" class="form-control" />
+			<span class="text-danger" asp-validation-for="Nome"></span>
+		</div>
+
+		<div>
+			<label for="cognome" asp-for="Cognome" class="form-label"></label>
+			<input id="cognome" asp-for="Cognome" class="form-control" />
+			<span class="text-danger" asp-validation-for="Cognome"></span>
+		</div>
+
+		<div>
+			<label for="tipo" asp-for="Tipo" class="form-label"></label>
+			<input type="checkbox" id="tipo" asp-for="Tipo" class="form-check-input" />
+		</div>
+
+		<div>
+			<button class="btn btn-success" type="submit">Save</button>
+			<button class="btn btn-warning" type="reset">Reset</button>
+		</div>
+	</form>
+</div>
+

@@ -13,5 +13,6 @@ namespace S14L3.Models
         [Required(ErrorMessage = "Il cognome è obbligatorio!")]
         public string? Cognome { get; set; }
         public bool Tipo {  get; set; }
+
     }
 }
